@@ -1,0 +1,330 @@
+body {
+font-family: "Poppins", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+margin: 0;
+padding: 0;
+}
+
+#home {
+background-color: #fff;
+}
+
+.cabecalho-menu {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 6px 12px;
+margin-left: 6rem;
+}
+
+.logo-container {
+display: flex;
+align-items: center;
+gap: 15px;
+width: 40%;
+}
+
+.img-logo {
+width: 10%;
+}
+
+.nome-logo {
+font-weight: 600;
+font-size: 1.3rem;
+color: rgb(146, 20, 20);
+}
+
+.espaco {
+width: 30%;
+}
+
+.menu {
+display: flex;
+align-items: center;
+gap: 20px;
+width: 45%;
+}
+
+.opcoes-menu {
+text-align: center;
+font-weight: 600;
+text-decoration: none;
+color: #000;
+font-size: 1.1rem;
+}
+
+.opcoes-menu:hover {
+color: rgb(124, 22, 22);
+}
+
+.login {
+background-color: rgb(124, 22, 22);
+color: #fff;
+border-radius: 8px;
+padding: 8px 16px;
+width: 10%;
+}
+
+.login:hover {
+background-color: beige;
+color: rgb(124, 22, 22);
+border: 2px solid rgb(124, 22, 22);
+}
+
+.cadastro {
+color: rgb(124, 22, 22);
+border: 2px solid rgb(124, 22, 22);
+border-radius: 8px;
+padding: 8px 16px;
+}
+
+.cadastro:hover {
+background-color: rgb(124, 22, 22);
+color: #fff;
+}
+
+/* BANNER */
+
+.banner {
+height: 100vh;
+background:
+linear-gradient(
+90deg,
+rgba(0,0,0,0.65) 0%,
+rgba(0,0,0,0.45) 40%,
+rgba(0,0,0,0.20) 100%
+),
+url("../assets/imgs/img-fundo-banner.webp");
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: center;
+}
+
+.container {
+max-width: 600px;
+margin-left: 15%;
+color: white;
+}
+
+.container h1 {
+font-size: 4rem;
+font-weight: 700;
+margin-bottom: 20px;
+}
+
+.container p {
+font-size: 1.2rem;
+line-height: 1.8;
+margin-bottom: 35px;
+}
+
+.btn-banner {
+display: inline-block;
+padding: 14px 30px;
+border: 2px solid white;
+color: white;
+text-decoration: none;
+transition: .3s;
+}
+
+.btn-banner:hover {
+background: white;
+color: #1f2937;
+}
+
+/* SOLUÇÕES */
+
+.container-solucoes {
+width: 90%;
+max-width: 1200px;
+margin: 6rem auto 3rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 5%;
+}
+
+.img-container {
+width: 50%;
+display: flex;
+justify-content: flex-end;
+}
+
+.img-solucoes {
+width: 100%;
+max-width: 750px;
+height: auto;
+border-radius: 8px;
+}
+
+.card-solucoes {
+width: 60%;
+text-align: left;
+}
+
+.ttl-solucoes {
+font-size: 3rem;
+font-weight: 700;
+margin-bottom: 30px;
+color: #000;
+}
+
+.destaque {
+color: rgb(180, 22, 22);
+}
+
+.txt-solucoes {
+font-size: 1.3rem;
+line-height: 1.8;
+color: #333;
+}
+
+/* ESPECIALIZAÇÃO */
+
+.especializacao {
+padding: 4rem 2rem 8rem;
+text-align: center;
+font-family: Arial, sans-serif;
+}
+
+.ttl-especializacao {
+font-size: 3rem;
+color: #202021;
+margin-bottom: 3rem;
+font-weight: 700;
+}
+
+.container-cards {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 40px 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.card-espc {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 10px;
+}
+
+.img-espc {
+width: 60px;
+height: 60px;
+margin-bottom: 20px;
+object-fit: contain;
+}
+
+.txt-espc {
+font-size: 0.9rem;
+color: #525560;
+line-height: 1.4;
+margin: 0;
+}
+
+.destaque {
+color: #cc3333;
+font-weight: bold;
+}
+
+/* FOOTER */
+
+.rodape {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 1rem 2rem 1rem 4rem;
+}
+
+.link-rodape {
+display: flex;
+gap: 50px;
+width: 40%;
+}
+
+.opcoes-rodape {
+display: block;
+margin: 10px 0;
+text-decoration: none;
+color: #404145;
+}
+
+.opcoes-rodape:hover {
+color: rgb(139, 27, 27);
+font-weight: 600;
+}
+
+.informacoes {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+width: 35%;
+}
+
+.rodape-mapa {
+width: 30%;
+}
+
+.img-mapa {
+width: 80%;
+border-radius: 10px;
+}
+
+.icones-informacoes {
+width: 45%;
+}
+
+.icones-informacoes-redes {
+width: 45%;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.link-rede {
+display: inline-block;
+transition: transform 0.2s;
+}
+
+.link-rede:hover {
+transform: scale(1.1);
+}
+
+.img-rede {
+width: 25px;
+height: 25px;
+}
+
+.flex-redes {
+display: flex;
+}
+
+.icon-redes {
+width: 10%;
+}
+
+.img-informacoes {
+width: 15%;
+}
+
+.titulo-informacoes {
+font-size: 1rem;
+margin-bottom: 0;
+}
+
+.texto-informacoes {
+font-size: .7rem;
+color: #525560;
+margin: 0;
+}
+
+.direitos {
+font-size: .9rem;
+text-align: center;
+display: flex;
+justify-content: center;
+}
