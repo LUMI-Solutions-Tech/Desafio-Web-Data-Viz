@@ -1,18 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
-}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700&display=swap');
 
 :root {
+  --branco: #fdfcfa;
+  --vermelho: #9c2b2b;
+  --vermelho-escuro: #6e1f1f;
+  --preto: #1c1c1c;
+  --cinza: #6b6b66;
+  --linha: #e3ddd2;
+
+  /* NOVAS CORES DA TEMÁTICA QUÍMICA ADICIONADAS */
+  --azul-reagente: #1f3a52;     /* Tom frio industrial para bordas e links */
+  --verde-seguranca: #1b4d3e;   /* Para indicar conformidade/sucesso */
+  --amarelo-alerta: #dca11d;    /* Tom de aviso para sinalizações de risco */
+
   --tamanho-header: 80px;
   --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-footer: 65px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--branco);
+  /* papel quadriculado de caderno de laboratório */
+  background-image: radial-gradient(var(--linha) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 .container {
@@ -21,9 +37,28 @@ body {
   margin: auto;
 }
 
+/* HEADER */
+
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  background-color: var(--branco);
+  border-bottom: 3px solid var(--vermelho);
+  position: relative;
+}
+
+/* faixa de risco — assinatura visual do projeto */
+.header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--vermelho) 0 10px,
+    var(--branco) 10px 20px
+  );
 }
 
 .header .container {
@@ -34,11 +69,12 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: var(--azul-reagente); /* Links agora usam o azul reagente */
 }
 
 .agora {
   font-weight: 800;
+  color: var(--preto);
 }
 
 .navbar {
@@ -47,13 +83,16 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #e3b062;
+  color: var(--vermelho-escuro);
 }
 
 .titulo {
-  color: #32b9cd;
+  color: var(--vermelho);
   width: fit-content;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .header h1 {
@@ -64,9 +103,10 @@ body {
 
 .banner {
   height: var(--tamanho-banner);
-  color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  color: var(--branco);
+  background-image: url('../assets/imgs/tela_cadastro.jpg');
   background-size: cover;
+  background-position: center;
 }
 
 .banner .container {
@@ -89,7 +129,7 @@ body {
 /* MISSÃO VISÃO VALORES */
 
 .social {
-  background-color: #e5e5e5;
+  background-color: var(--linha);
   display: flex;
 }
 
@@ -110,6 +150,7 @@ body {
 
 .social p {
   text-align: center;
+  color: var(--preto);
 }
 
 .box {
@@ -121,11 +162,26 @@ body {
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
+  background-color: var(--vermelho);
   height: 150px;
-  color: #fff;
+  color: var(--branco);
   display: flex;
   font-size: 15px;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -7px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--branco) 0 10px,
+    var(--vermelho) 10px 20px
+  );
 }
 
 .footer .container {
@@ -135,14 +191,17 @@ body {
 
 .footer .container .version {
   font-size: 12px;
+  opacity: 0.85;
 }
 
 /* LOGIN */
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image:
+    url('../assets/imgs/teste.jpg');
   background-size: cover;
+  background-position: center;
 }
 
 .login .container {
@@ -153,12 +212,13 @@ body {
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
-  border-radius: 10px;
+  background-color: var(--branco);
+  border: 2px dashed var(--azul-reagente); /* Borda tracejada azul reagente */
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: var(--azul-reagente); /* Texto do card em azul reagente */
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -167,6 +227,10 @@ body {
 .card h2 {
   margin: 0;
   font-size: 30px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .formulario {
@@ -180,22 +244,23 @@ body {
 .formulario span {
   font-size: 15px;
   font-weight: 800;
+  color: var(--preto);
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
+  border: 2px dashed var(--azul-reagente); /* Borda interna do input em azul */
   text-align: center;
-  border-radius: 10px;
+  border-radius: 6px;
   margin: 0;
 }
 
 .formulario select {
-  border: 2px solid #32b9cd;
-  background-color: white;
-  color: gray;
+  border: 2px dashed var(--azul-reagente); /* Borda do select em azul */
+  background-color: var(--branco);
+  color: var(--cinza);
   height: 36px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 6px;
   margin: 0;
 }
 
@@ -208,17 +273,24 @@ body {
 
 .botao {
   cursor: pointer;
-  font-family: "Barlow", sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
-  color: #fff;
-  background-color: #ED145B;
+  color: var(--branco);
+  background-color: var(--vermelho);
   width: 120px;
   height: 30px;
   align-self: center;
   margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.botao:hover {
+  background-color: var(--vermelho-escuro);
 }
 
 .loading-div {
@@ -232,36 +304,38 @@ body {
 }
 
 #div_erros_login {
-  display: none
+  display: none;
 }
 
 /* FORMULARIO */
 
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
 
 .card_erro {
   display: none;
-  background-color: #fff;
-  color: black;
+  background-color: var(--branco);
+  color: var(--preto);
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #ED145B 3px solid;
+  border: var(--amarelo-alerta) 3px solid; /* Borda de erro usando o Amarelo Alerta industrial */
   padding: 10px;
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
+  color: var(--vermelho-escuro);
 }
 
 .formulario .tipo_campo {
   font-size: 20px;
   font-weight: 600 !important;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .formulario {
@@ -271,24 +345,31 @@ body {
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px dashed var(--azul-reagente); /* Borda geral de inputs usando azul reagente */
   padding: 10px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 .btn {
-  font-family: "Barlow", sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #ED145B;
+  color: var(--branco);
+  background-color: var(--vermelho);
   width: 120px;
   align-self: center;
   margin-top: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--vermelho-escuro);
 }
 
 .loading-div {
@@ -305,12 +386,12 @@ input {
 /* SIMULADOR */
 
 .simulador {
-  color: white;
+  color: var(--preto);
 }
 
 .simulador .container {
   flex-direction: column;
-  overflow: scroll; 
+  overflow: scroll;
   height: var(--tamanho-simulador);
 }
 
@@ -323,7 +404,8 @@ input {
 }
 
 .mensagem-alarme {
-  background-color: white;
+  background-color: var(--branco);
+  border: 2px dashed var(--amarelo-alerta); /* Borda do card de alarme usando Amarelo Alerta */
   border-radius: 5px;
   width: 300px;
   height: 80px;
@@ -337,6 +419,7 @@ input {
 .mensagem-alarme h3 {
   font-size: 14px;
   margin: 0;
+  color: var(--preto);
 }
 
 .mensagem-alarme .informacao {
@@ -351,6 +434,8 @@ input {
   background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
   background-size: cover;
   animation-iteration-count: infinite;
+  /* Filtro calibrado para tingir o ícone preto exatamente com o tom do Amarelo Alerta */
+  filter: invert(60%) sepia(80%) saturate(800%) hue-rotate(5deg) brightness(90%);
 }
 
 @keyframes bell {
